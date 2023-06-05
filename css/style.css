@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  --primary-pale-blue: hsl(225, 100%, 94%);
+  --primary-bright-blue: hsl(245, 75%, 52%);
+
+  --neutral-very-pale-blue: hsl(225, 100%, 98%);
+  --neutral-desaturated-blue: hsl(224, 23%, 55%);
+  --neutral-dark-blue: hsl(223, 47%, 23%);
+
+  --font-size: 16px;
+  --font-normal: 500;
+  --font-bold: 700;
+  --font-bolder: 900;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-size: var(--font-size);
+  margin: 0;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #e0e8ff;
+  background-image: url("../images/pattern-background-mobile.svg");
+  background-repeat: repeat-x;
+  background-size: 100% 25%;
+}
+
+@media (450px < width) {
+  body {
+    background-image: url("../images/pattern-background-desktop.svg");
+    background-size: 100% 50%;
+  }
+}
+
+h1 {
+  font-size: calc(var(--font-size) * 1.75);
+  font-weight: var(--font-bolder);
+}
+
+h2,
+button,
+a {
+  font-weight: var(--font-bold);
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.flex-item {
+  text-align: left;
+  display: grid;
+}
+
+.card {
+  max-width: 450px;
+  text-align: center;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.hero {
+  background-color: var(--primary-bright-blue);
+}
+
+.hero * {
+  display: block;
+}
+
+img {
+  min-width: 48px;
+  max-width: 100%;
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+  padding: 45px 50px;
+}
+
+@media (width < 450px) {
+  .content {
+    padding: 30px 25px;
+  }
+}
+
+.order-item {
+  justify-content: space-between;
+  background-color: var(--neutral-very-pale-blue);
+  border-radius: 10px;
+  padding: 25px 20px;
+}
+
+h2 {
+  color: var(--neutral-dark-blue);
+}
+
+p {
+  color: var(--neutral-desaturated-blue);
+  line-height: 25px;
+}
+
+.change-order-button {
+  color: var(--primary-bright-blue);
+}
+
+button {
+  background-color: var(--primary-bright-blue);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0;
+  margin-top: 15px;
+  box-shadow: 0px 20px 20px rgba(90, 90, 200, 0.3);
+}
+
+.cancel-order-button {
+  text-decoration: none;
+  color: var(--neutral-dark-blue);
+  margin-top: 15px;
+}
